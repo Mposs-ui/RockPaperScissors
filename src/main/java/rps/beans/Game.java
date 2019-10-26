@@ -49,7 +49,7 @@ public class Game {
 	
 	public void setComputerPlayer() {
 		Random num = new Random();
-		int answer = num.nextInt(3) + 1;
+		int answer = num.nextInt(5) + 1;
 		String player = null;
 		if(answer == 1) {
 			player = "rock";
@@ -57,6 +57,10 @@ public class Game {
 			player = "paper";
 		}else if(answer == 3) {
 			player = "scissors";
+		} else if(answer == 4) {
+			player = "lizard";
+		} else if(answer == 5) {
+			player = "spock";
 		}
 		this.setComputerPlayer(player);
 	}
@@ -65,9 +69,23 @@ public class Game {
 		String winner = "Computer";
 		if(player1.contentEquals("rock") && computerPlayer.contentEquals("scissors")) {
 			winner = "player";
+		} else if(player1.contentEquals("rock") && computerPlayer.contentEquals("lizard")) {
+			winner = "player";
 		} else if(player1.contentEquals("scissors") && computerPlayer.contentEquals("paper")) {
 			winner = "player";
+		} else if(player1.contentEquals("scissors") && computerPlayer.contentEquals("lizard")) {
+			winner = "player";
+		} else if(player1.contentEquals("paper") && computerPlayer.contentEquals("spock")) {
+			winner = "player";
 		} else if(player1.contentEquals("paper") && computerPlayer.contentEquals("rock")) {
+			winner = "player";
+		} else if(player1.contentEquals("lizard") && computerPlayer.contentEquals("spock")) {
+			winner = "player";
+		} else if(player1.contentEquals("lizard") && computerPlayer.contentEquals("paper")) {
+			winner = "player";
+		} else if(player1.contentEquals("spock") && computerPlayer.contentEquals("scissors")) {
+			winner = "player";
+		} else if(player1.contentEquals("spock") && computerPlayer.contentEquals("rock")) {
 			winner = "player";
 		} 
 		
